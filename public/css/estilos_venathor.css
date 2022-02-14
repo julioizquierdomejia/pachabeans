@@ -1,0 +1,111 @@
+.dm-item .dropdown-menu {
+      transform: scaleX(0);
+      opacity: 0;
+      transition: .4s ease;
+        transition-delay: opacity .2s;
+        transform-origin: left;
+    }
+    .dm-item:hover .dropdown-menu {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    #btnMenu:hover .i-first, .btn-active .i-first {
+      transform: rotate(45deg) translate(13px, -22px);
+    }
+    #btnMenu:hover .i-second, .btn-active .i-second {
+      transform: rotate(-45deg) translate(-41px, 25px);
+    }
+    #btnMenu:hover .i-third, .btn-active .i-third {
+      display: none;
+    }
+    .ff-nunito {
+      font-family: 'Nunito Sans', sans-serif;
+    }
+    .slick-slider .slick-arrow {
+      border-radius: 30px;
+      width: 25px;
+      height: 25px;
+      z-index: 3;
+    }
+    .slider-banners .slick-arrow {
+      background-color: #f2e7e9!important;
+    }
+    .slider-banners .slick-prev:before,
+    .slider-banners .slick-next:before {
+      color: #333;
+    }
+    .slick-slider .slick-prev:before,
+    .slick-slider .slick-next:before {
+      font-family: "Font Awesome 5 Pro";
+      opacity: 1;
+    }
+    .full-slider .slick-prev {
+      left: 10px;
+    }
+    .full-slider .slick-next {
+      right: 10px;
+    }
+    .slick-slider .slick-prev:before {
+      content: "\f104";
+    }
+    .slick-slider .slick-next:before {
+      content: "\f105";
+    }
+    .obj-lk:hover .obj-btn-see {
+      display: block !important;
+    }
+    .obj-lk:hover .obj-title {
+      display: none !important;
+    }
+    .obj-lk:hover .bg-fixed {
+      opacity: 1;
+    }
+
+    .slick-slider .slick-arrow {
+      background-color: #f2e7e9!important;
+      border-radius: 30px;
+      width: 25px;
+      height: 25px;
+    }
+    .slick-slider .slick-prev:before,
+    .slick-slider .slick-next:before {
+      color: #333;
+      font-family: "Font Awesome 5 Pro";
+      opacity: 1;
+    }
+    .slick-slider .slick-prev:before {
+      content: "\f104";
+    }
+    .slick-slider .slick-next:before {
+      content: "\f105";
+    }
+    @media all and (min-width: 992px) {
+      .pr-bottom {
+        visibility: hidden;
+        transition: opacity .5s;
+        opacity: 0;
+      }
+      .plink:hover .pr-bottom {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .bigger:hover .bigger-bg {
+      transform: scale(1.1);
+    }
+    .bigger-bg:before {
+      content: '';
+      background-color: rgba(17, 24, 39, .65);
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .bigger:hover .bigger-bg:before {
+      opacity: 1;
+    }
