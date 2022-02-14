@@ -48,12 +48,13 @@
 
     */
     $('.slider-banners').slick({
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
       autoplay: true,
       autoplaySpeed: 1200,
     });
 
     $('.slider-anuncios').slick({
+      lazyLoad: 'progressive',
       arrows: true,
     });
 
@@ -66,6 +67,7 @@
 
      // SLIDER DE PRODUCTOS
      $('.products').slick({
+      lazyLoad: 'progressive',
       dots: false,
       infinite: true,
       speed: 300,
