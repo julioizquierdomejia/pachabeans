@@ -15,6 +15,12 @@
 
   <link rel="stylesheet" type="text/css" href="{{ asset('css/estilos_venathor.css') }}"/>
   
+
+
+  <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+
   
 </head>
 <body style="font-family: Nunito Sans, sans-serif;" class="ff-nunito">
@@ -35,9 +41,6 @@
 <!-- FIN DE FOOTER -->
 
 <!-- Scrips -->
-<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 
 
 <script type="text/javascript">
