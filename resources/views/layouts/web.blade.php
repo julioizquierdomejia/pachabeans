@@ -48,6 +48,7 @@
 
     */
     $('.slider-banners').slick({
+      lazyLoad: 'ondemand',
       autoplay: true,
       autoplaySpeed: 1200,
     });
