@@ -3,22 +3,16 @@
 
 @section('content')
 <!-- SLIDER HEADER -->
-
   <x-slider />
-
 <!-- FIN DEL SLIDER HEADER -->
 
 
 <!-- INICIO DE LOS OBEJTIVOS los tag vienen aqui -->
-
-  <x-objectives />
-
+<x-objectives />
 <!-- FIN DE LOS OBJETIVOSS -->
 
 <!-- BANNERS PROMOCIONALES -->
-
 <x--banners />
-
 <!-- FIN DE BANNERS PROMOCIONALES -->
 
 <!-- PRODUCTOS DEL MES -->
@@ -103,7 +97,7 @@
     @foreach($productos as $key)
     @if($key->recommended == 0)
     <li class="py-3">
-      <a class="block pt-3 pb-6 px-4 plink text-center hover:shadow-lg shadow-gray-300" href="">
+      <a class="block pt-3 pb-6 px-4 plink text-center hover:shadow-lg shadow-gray-300" href="{{ route('web.show', $key->id) }}">
         
         
         @if($key->offer > 0)

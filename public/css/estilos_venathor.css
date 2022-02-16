@@ -109,3 +109,70 @@
     .bigger:hover .bigger-bg:before {
       opacity: 1;
     }
+
+
+
+
+
+
+
+
+
+
+    .pr-image-zoom .slick-arrow {
+      background-color: #f2e7e9!important;
+      z-index: 99;
+    }
+    .pr-image-zoom .slick-prev:before,
+    .pr-image-zoom .slick-next:before {
+      color: #333;
+    }
+    .slick-slider .slick-prev:before,
+    .slick-slider .slick-next:before {
+      font-family: "Font Awesome 5 Pro";
+      opacity: 1;
+    }
+    .full-slider .slick-prev {
+      left: 10px;
+    }
+    .full-slider .slick-next {
+      right: 10px;
+    }
+    .slick-slider .slick-prev:before {
+      content: "\f104";
+    }
+    .slick-slider .slick-next:before {
+      content: "\f105";
+    }
+    .xzoom-preview {
+      border: 0 !important;
+    }
+
+
+
+
+    .pr-image-zoom .slick-arrow {
+      background-color: #f2e7e9!important;
+      z-index: 99;
+    }
+    .pr-image-zoom .slick-prev:before,
+    .pr-image-zoom .slick-next:before {
+      color: #333;
+    }
+    .slick-slider .slick-prev:before,
+    .slick-slider .slick-next:before {
+      font-family: "Font Awesome 5 Pro";
+      opacity: 1;
+    }
+    .full-slider .slick-prev {
+      left: 10px;
+    }
+    .full-slider .slick-next {
+      right: 10px;
+    }
+    .slick-slider .slick-prev:before {
+      content: "\f104";
+    }
+    .slick-slider .slick-next:before {
+      content: "\f105";
+    }

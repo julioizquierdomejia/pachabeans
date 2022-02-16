@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ImagesProductController;
 use App\Http\Controllers\ValueController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SubcategoryController;
 
 
 
@@ -19,6 +20,11 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::resource('category', CategoryController::class);
 Route::post('category/updateStatus', [CategoryController::class, 'updateStatus'])->name('category.updateStatus');
+Route::post('category/updateRecommended', [CategoryController::class, 'updateRecommended'])->name('category.updateRecommended');
+Route::post('category/updateOutstanding', [CategoryController::class, 'updateOutstanding'])->name('category.updateOutstanding');
+
+Route::resource('subcategory', SubcategoryController::class);
+Route::post('subcategory/updateStatus', [SubcategoryController::class, 'updateStatus'])->name('subcategory.updateStatus');
 
 Route::resource('tag', TagController::class);
 Route::post('tag/updateStatus', [TagController::class, 'updateStatus'])->name('tag.updateStatus');

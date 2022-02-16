@@ -134,4 +134,22 @@ class CategoryController extends Controller
         ]);
 
     }
+
+    public function updateRecommended(Request $request){
+
+        $categoria = Category::find($request->id);
+
+        $categoria->update([
+            'recommended' => $request->recommended,
+        ]);
+    }
+
+    public function updateOutstanding(Request $request){
+
+        $categoria = Category::find($request->id);
+
+        $categoria->update([
+            'outstanding' => $request->outstanding,
+        ]);
+    }
 }

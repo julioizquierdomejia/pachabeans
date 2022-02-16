@@ -17,4 +17,9 @@ class Tag extends Model
         'images',
 
     ];
+
+    //relacion de muchos a muchos
+    public function products(){
+        return $this->belongsToMany('App\Models\Product');
+    }
 }

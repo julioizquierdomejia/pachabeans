@@ -11,9 +11,11 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 use App\Models\Category;
+use App\Models\Subcategory;
 use App\Models\Product;
 use App\Models\Attribute;
 use App\Models\Value;
+use App\Models\Tag;
 use App\Models\ImagesProduct;
 
 use Illuminate\Support\Facades\DB;
@@ -46,11 +48,12 @@ class ProductController extends Controller
     {
         //
         $productos = Product::all();
-        $categorias = Category::all();
+        $subcategorias = Subcategory::all();
         $atributos_valores = Value::all();
         $atributos = Attribute::all();
+        $etiquetas = Tag::all();
 
-        return view('admin.product.create', compact('productos', 'categorias', 'atributos', 'atributos_valores'));
+        return view('admin.product.create', compact('productos', 'subcategorias', 'atributos', 'atributos_valores', 'etiquetas'));
     }
 
     /**
@@ -62,8 +65,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         //
-        //convertimos el array de los valores de los atributos
-        $attr = explode(",",$request->attr);
+        $at = $request->attr;
 
         //validaciones
         $request->validate([
@@ -101,7 +103,8 @@ class ProductController extends Controller
 
         if($request->hasFile("imagenes")){
 
-            foreach($request->imagenes as $img_prod){
+
+            foreach($request->imagenes as $value => $img_prod){
 
                 //obteneos el nombre de la imagen con GetclientOriginalName()
                 $nombre = Str::random(10) . '_' . $img_prod->getClientOriginalName();
@@ -114,13 +117,20 @@ class ProductController extends Controller
                 Image::make($img_prod)->resize(500, 500)->save($ruta);
 
                 //Grabamos en la base de datos toda la ruta de la imagen
-                ImagesProduct::create([
-                    'product_id' => $producto->id,
-                    'uri_image' =>'/storage/images/productos/img/',
-                    'image' => $nombre,
-                ]);
+                $imagen_producto = new ImagesProduct();
+                $imagen_producto->product_id = $producto->id;
+                $imagen_producto->uri_image = '/storage/images/productos/img/';
+                $imagen_producto->image = $nombre;
+
+                if($value == 0){
+                    $imagen_producto->principal = 0;
+                }
+
+                $imagen_producto->save();
             }
         }
+
+
 
         //registramos los atributos de este producto 
         /*
@@ -129,8 +139,16 @@ class ProductController extends Controller
         };
         */
 
-        $producto->values()->sync($attr);
+        if($at == null){
 
+        }else{
+            //convertimos el array de los valores de los atributos
+            $attr = explode(",",$request->attr);
+            $producto->values()->sync($attr);    
+        }
+        
+        $producto->subcategories()->sync($request->attribute_id);
+        $producto->tags()->sync($request->tag_id);
 
         
 

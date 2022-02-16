@@ -262,9 +262,18 @@ return [
         [
             'text'        => ' Categorias',
             'url'         => 'admin/category',
+            'icon'        => 'fal fa-box-full',
+            'icon_color'  => 'red',
+        ],
+
+        [
+            'text'        => ' Sub Categorias',
+            'url'         => 'admin/subcategory',
             'icon'        => 'fas fa-dumbbell',
             'icon_color'  => 'blue',
         ],
+
+
         [
             'text'        => ' Etiquetas',
             'url'         => 'admin/tag',

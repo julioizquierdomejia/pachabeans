@@ -33,9 +33,9 @@
 				<div class="form-row">
 
 					<div class="form-group col-md-3">
-						<label for="inputState">Categoría</label>
+						<label for="inputState">Sub Categoría</label>
 						<select id="inputState" class="form-control select_Attribute" name='attribute_id'>
-							@foreach($categorias as $key)
+							@foreach($subcategorias as $key)
 								<option value="{{ $key->id }}">{{ $key->name }}</option>
 							@endforeach							
 						</select>
@@ -46,7 +46,22 @@
 						@enderror
 					</div>
 
+					<div class="form-group col-md-3">
+						<label for="inputState">Objetivo</label>
+						<select id="inputState" class="form-control select_Tag" name='tag_id'>
+							@foreach($etiquetas as $key)
+								<option value="{{ $key->id }}">{{ $key->name }}</option>
+							@endforeach							
+						</select>
+						@error('name')
+							<div>
+								<small class="text-danger">* {{ $message }}</small>
+							</div>
+						@enderror
+					</div>
+				</div>
 
+				<div class="form-row">
 					<div class="form-group col-md-3">
 						<Label>Precio del producto</Label>
 						<input type="number" class="form-control" id="valueattribute" name="price" placeholder="Precio" value="{{ old('price') }}" min="0" value="0" step=".01" pattern="^\d*(\.\d{0,2})?$">
@@ -134,7 +149,6 @@
 					</div>
 				</div>
 			</div>{{-- Descripcion del prodicto --}}
-
 					
 			<div class="card col-12 col-md-12"> {{-- INICIO de Card Subiir foto --}}
 				<div class="card-body">
@@ -211,6 +225,7 @@
 
 	<script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
 
+	
     <script>
 
     	$(document).ready(function() {
@@ -240,6 +255,10 @@
 			
 		    
 		    $('.select_Attribute').select2({
+    			theme: 'bootstrap4',
+    		});
+
+    		$('.select_Tag').select2({
     			theme: 'bootstrap4',
     		});
 

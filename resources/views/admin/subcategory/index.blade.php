@@ -1,23 +1,23 @@
 @extends('adminlte::page')
 
-@section('title', 'Categorias')
+@section('title', 'Sub Categorias')
 
 @section('content_header')
     <h1>Categorias</h1>
 @stop
 
 @section('content')
-    <p>Listado de Categorias</p>
+    <p>Listado de Sub Categorías</p>
 
     <div class="card">
     	<div class="card-body">
-    		<a href="{{ route('category.create') }}" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>Nueva Cateogoria</a>
+    		<a href="{{ route('subcategory.create') }}" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>Nueva Sub Categoría</a>
     	</div>
     </div>
     
 
     <div class="row row-cols-1 row-cols-md-4">
-	  @foreach($categorias as $key)
+	  @foreach($subcategorias as $key)
 	  	<div class="col mb-4">
 		    <div class="card">
 		      <!--img src="..." class="card-img-top" alt="..."-->
@@ -50,7 +50,7 @@
 		      <div class="card-footer">
 				<div class="d-flex align-items-center mt-2">
 				<a href="{{ route('category.edit', $key->id) }}" class="btn btn-warning"><i class="fas fa-edit mr-2"></i>Editar</a>
-					<form method="POST" action="{{ url("admin/category/{$key->id}") }}">
+					<form method="POST" action="{{ url("admin/subcategory/{$key->id}") }}">
 						@csrf
   						@method('DELETE')
 						<button type="submit" class="btn btn-danger ml-2"><i class="far fa-trash-alt"></i></button>

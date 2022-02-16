@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AttributeSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(TagSeeder::class);
+        $this->call(ValueSeeder::class);
+        $this->call(SubcategorySeeder::class);
     }
 }

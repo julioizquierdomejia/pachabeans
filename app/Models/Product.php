@@ -29,8 +29,16 @@ class Product extends Model
         return $this->belongsToMany('App\Models\Category');
     }
 
+    public function subcategories(){
+        return $this->belongsToMany('App\Models\Subcategory');
+    }
+
     //relacion muchos a muchos
     public function values(){
         return $this->belongsToMany('App\Models\Value');
+    }
+
+    public function tags(){
+        return $this->belongsToMany('App\Models\Tag');
     }
 }
