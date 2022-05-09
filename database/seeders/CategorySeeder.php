@@ -16,49 +16,16 @@ class CategorySeeder extends Seeder
     {
         //
         Category::create([
-            'name' => 'Orgánico y Naturales',
-            'description' => 'Orgánico y Naturales',
+            'name' => 'Cafe',
+            'description' => 'Categoría Cafe',
         ]);
 
         Category::create([
-            'name' => 'Proteinas y aminoácidos',
-            'description' => 'Proteinas y aminoácidos',
+            'name' => 'Utensilio',
+            'description' => 'Utencilios',
         ]);
 
-        Category::create([
-            'name' => 'Control de peso',
-            'description' => 'Control de peso',
-        ]);
-
-        Category::create([
-            'name' => 'Energía',
-            'description' => 'Energía',
-        ]);
-
-        Category::create([
-            'name' => 'Salud y bienestar',
-            'description' => 'Salud y bienestar',
-        ]);
-
-        Category::create([
-            'name' => 'Zona solgar',
-            'description' => 'Zona solgar',
-        ]);
-
-        Category::create([
-            'name' => 'Snack',
-            'description' => 'Snack',
-        ]);
-
-        Category::create([
-            'name' => 'Accesorios',
-            'description' => 'Accesorios',
-        ]);
-
-        Category::create([
-            'name' => 'Marcas',
-            'description' => 'Marcas',
-        ]);
+        
 
     }
 }

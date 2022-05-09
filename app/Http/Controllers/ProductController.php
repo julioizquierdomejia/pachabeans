@@ -65,7 +65,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         //
-        $at = $request->attr;
+        $at = $request->ofertas_array;
 
         //validaciones
         $request->validate([
@@ -114,7 +114,7 @@ class ProductController extends Controller
 
 
                 //en una sola linea, creamos la imagen, la redimensionamos y la grabamos en la ruta que hemos crado
-                Image::make($img_prod)->resize(500, 500)->save($ruta);
+                Image::make($img_prod)->resize(456, 364)->save($ruta);
 
                 //Grabamos en la base de datos toda la ruta de la imagen
                 $imagen_producto = new ImagesProduct();
@@ -182,7 +182,6 @@ class ProductController extends Controller
         $atributos = Attribute::all();
         $values_a = [];
 
-
         //traemos todos los valores de atributos elegidos
         $valores = DB::table('product_value')
                     ->where('product_id', $producto->id)->get();
@@ -193,7 +192,6 @@ class ProductController extends Controller
 
         //convertimos el array en String
         $values = implode(',', $values_a);
-
 
         return view('admin.product.edit', compact('producto', 'atributos', 'atributos_valores', 'values', 'values_a'));
     }

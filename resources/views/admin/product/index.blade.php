@@ -82,7 +82,10 @@
 							</div>
 						</form>
 	                </td class="align-middle">
-	                <td class="align-middle"><img src="{{ $key->uri_image_banner.$key->image_banner ? $key->uri_image_banner.$key->image_banner : 'https://picsum.photos/120/40' }}" alt="" width="120" height="40"></td>
+	                {{-- 
+	                <td class="align-middle"><img src="{{ $key->uri_image_banner.$key->image_banner ? $key->uri_image_banner.$key->image_banner : 'https://picsum.photos/120/40' }}" alt="" width="100" height="80"></td>
+	                 --}}
+	                <td class="align-middle"><img src="{{ $key->uri_image_banner.$key->image_banner }}" alt="" width="100" height="80"></td>
 	                <td class="align-middle">
 	                	<a href="{{ route('product.edit', $key->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
 	                	<a href="" class="btn btn-info"><i class="fas fa-plus"></i></a>
