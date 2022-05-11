@@ -67,14 +67,6 @@ class ProductController extends Controller
         //
         $at = $request->ofertas_array;
 
-        //validaciones
-        $request->validate([
-            'name'  =>  'required',
-            'price'=>'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
-            'offer'=>'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
-            'stock' => 'required',
-        ]);
-
         $producto = new Product();
 
         if($request->hasFile("imagen")){
@@ -82,14 +74,13 @@ class ProductController extends Controller
             $nombre = Str::random(10) . '_' . $request->file('imagen')->getClientOriginalName();
 
             //Creamos una ruta apuntando al Storage, y a que carpeta irá, tiene que existitr la carpeta
-            $ruta = storage_path() . '/app/public/images/productos/banners/' . $nombre;
-
+            $ruta = storage_path() . '/app/public/images/productos/img/' . $nombre;
 
             //en una sola linea, creamos la imagen, la redimensionamos y la grabamos en la ruta que hemos crado
-            Image::make($request->file('imagen'))->resize(1120, 450)->save($ruta);
+            Image::make($request->file('imagen'))->resize(456, 364)->save($ruta);
 
             //Grabamos en la base de datos toda la ruta de la imagen
-            $producto->uri_image_banner = '/storage/images/productos/banners/';
+            $producto->uri_image_banner = '/storage/images/productos/img/';
             $producto->image_banner = $nombre;
         }
 
@@ -101,8 +92,9 @@ class ProductController extends Controller
 
         $producto->save();
 
+        
+        /*
         if($request->hasFile("imagenes")){
-
 
             foreach($request->imagenes as $value => $img_prod){
 
@@ -129,6 +121,7 @@ class ProductController extends Controller
                 $imagen_producto->save();
             }
         }
+        */
 
 
 

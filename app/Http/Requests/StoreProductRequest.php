@@ -24,7 +24,10 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'  =>  'required',
+            'price'=>'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
+            'offer'=>'required|numeric|regex:/^[\d]{0,11}(\.[\d]{1,2})?$/',
+            'stock' => 'required',
         ];
     }
 }

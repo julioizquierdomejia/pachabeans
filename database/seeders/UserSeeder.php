@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         //
         User::create([
-            'name' => 'Venathor Food',
+            'name' => 'Pacha Beans - Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678')
         ])->assignRole('Admin');
