@@ -19,11 +19,11 @@ class Category extends Model
     ];
 
     public function products(){
-        return $this->belongsToMany('App\Models\Product');
+        return $this->hasMany('App\Models\Product');
     }
 
     public function subCategories(){
-        return $this->belongsToMany('App\Models\Subcategory');
+        return $this->hasMany('App\Models\Subcategory');
     }
 
     public function usuarios(){

@@ -31,17 +31,17 @@
 <!-- Container Slider Productos-->
   <div class="container mx-auto px-10">
     
-    
     @if($categorias)
       @foreach($categorias as $categoria)
-        <h3 class="text-5xl text-lime-600 font-bold pt-6">{{ $categoria->name }}</h3>
+        
         @if($subcategorias)
           @foreach($subcategorias as $subCategoria)
 
             {{-- Si la categoría existe, pero no tiene productos no la mostramos --}}
             @if($subCategoria->products->count() > 0)
               @if($subCategoria->category_id == $categoria->id)
-                <h3 class="text-2xl text-slate-500 pb-4">{{ $subCategoria->name }} ({{ $subCategoria->products->count() }} Productos) </h3>
+              <h3 class="text-5xl text-lime-600 font-bold pt-6">{{ $categoria->name }}</h3>
+                <h3 class="text-3xl text-slate-500 pb-4">{{ $subCategoria->name }} ({{ $subCategoria->products->count() }} Productos) </h3>
 
                 <!-- Slider Productos -->
                 <div class="slider_productos mx-auto">

@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 
 </head>
-<body>
+<body class="overflow-x-hidden">
 
   <!-- header -->
   <div class="w-full flex py-3 px-5 justify-between text-2xl text-gray-400">
