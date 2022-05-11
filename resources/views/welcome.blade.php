@@ -57,7 +57,13 @@
                       <span class="text-red-400 hover:text-red-600 px-4 text-xl absolute top-3 right-3 font-semibold cursor-pointer"><i class="far fa-shopping-cart"></i></span>
                       <span class="text-red-400 hover:text-red-600 px-4 text-xl absolute top-3 right-12 font-semibold cursor-pointer"><i class="far fa-heart"></i></span>
                       <!--img class='w-full' src="img/productos/producto1.png" alt=""-->
-                      <img class='w-full' src="{{ $producto->uri_image_banner.$producto->image_banner }}" alt="">
+
+                      @if($producto->uri_image_banner)
+                        <img class='w-full' src="{{ $producto->uri_image_banner.$producto->image_banner }}" alt="">
+                      @else
+                        <img class='w-full' src="{{ asset('/storage/images/productos/img/default.png') }}" alt="">
+                      @endif
+                      
                       <h5 class="text-2xl ml-3 mt-3 text-gray-400">{{ $subCategoria->name }}</h5>
                       <h4 class="text-3xl ml-3 text-gray-700 font-medium">{{ $producto->name }}</h4>
 

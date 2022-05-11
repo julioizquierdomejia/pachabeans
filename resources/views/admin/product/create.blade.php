@@ -35,6 +35,7 @@
 					<div class="form-group col-md-3">
 						<label for="inputState">Sub Categoría</label>
 						<select id="inputState" class="form-control select_Attribute" name='attribute_id'>
+							<option value="" disabled selected>Elija una Sub Categoria</option>
 							@foreach($subcategorias as $key)
 								<option value="{{ $key->id }}">{{ $key->name }}</option>
 							@endforeach							
@@ -47,8 +48,9 @@
 					</div>
 
 					<div class="form-group col-md-3">
-						<label for="inputState">Objetivo</label>
+						<label for="inputState">Etiqueta</label>
 						<select id="inputState" class="form-control select_Tag" name='tag_id'>
+							<option value="" disabled selected>Elija una Etiqueta</option>
 							@foreach($etiquetas as $key)
 								<option value="{{ $key->id }}">{{ $key->name }}</option>
 							@endforeach							
@@ -105,8 +107,7 @@
 						<div class="my-3 ml-4 border-left border-info pl-2">
 							@foreach($atributos_valores as $at_v)
 								@if($at->id == $at_v->attribute_id)
-									<!--a href="#" class="badge badge-pill badge-primary px-3 py-1 btn-attr"-->									
-
+									<!--a href="#" class="badge badge-pill badge-primary px-3 py-1 btn-attr"-->	
 										<div class="form-check">
 											<input class="form-check-input btn-attr" type="checkbox" value="" id="{{ $at_v->id }}" name="attr">
 											<label class="form-check-label badge badge-pill badge-primary px-3 py-1" for="defaultCheck1">
@@ -119,6 +120,11 @@
 							@endforeach	
 						</div>
 					@endforeach
+					@error('attr')
+					<div>
+						<small class="text-danger">* {{ $message }}</small>
+					</div>
+					@enderror
 					
 				</div>
 			</div>
