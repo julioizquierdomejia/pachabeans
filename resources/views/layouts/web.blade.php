@@ -29,8 +29,8 @@
 
     <ul class="flex items-center">
       <li class="px-5 hover:text-white"><a href="#">Inicio</a></li>
-      <li class="px-5 hover:text-white"><a href="#">Ofertas</a></li>
       <li class="px-5 hover:text-white"><a href="#">Suscripciones</a></li>
+      <li class="px-5 hover:text-white"><a href="#">Empresas</a></li>
       <li class="px-5 hover:text-white"><a href="#">Contáctanos</a></li>
     </ul>
 
