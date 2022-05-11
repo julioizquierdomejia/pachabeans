@@ -65,7 +65,8 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         //
-        $at = $request->ofertas_array;
+
+        $at = $request->attr;
 
         $producto = new Product();
 
@@ -133,17 +134,16 @@ class ProductController extends Controller
         */
 
         if($at == null){
-
+            
         }else{
             //convertimos el array de los valores de los atributos
+            
             $attr = explode(",",$request->attr);
             $producto->values()->sync($attr);    
         }
         
         $producto->subcategories()->sync($request->attribute_id);
         $producto->tags()->sync($request->tag_id);
-
-        
 
         return redirect('/admin/product');
 

@@ -50,13 +50,28 @@
                   <!-- Producto -->
                   <div class='cardProducto py-5 pr-10'>
                     <div class="border border-2 border-gray-300 rounded-lg relative overflow-hidden">         
-                      <span class="bg-red-600 rounded text-white px-4 text-xl absolute top-3 left-3 font-semibold">Nuevo</span>
+                      @if($producto->recommended == 1)
+                        <span class="bg-red-600 rounded text-white px-4 text-xl absolute top-3 left-3 font-semibold">Recomendado</span>
+                      @endif
+                      
                       <span class="text-red-400 hover:text-red-600 px-4 text-xl absolute top-3 right-3 font-semibold cursor-pointer"><i class="far fa-shopping-cart"></i></span>
                       <span class="text-red-400 hover:text-red-600 px-4 text-xl absolute top-3 right-12 font-semibold cursor-pointer"><i class="far fa-heart"></i></span>
                       <!--img class='w-full' src="img/productos/producto1.png" alt=""-->
                       <img class='w-full' src="{{ $producto->uri_image_banner.$producto->image_banner }}" alt="">
                       <h5 class="text-2xl ml-3 mt-3 text-gray-400">{{ $subCategoria->name }}</h5>
                       <h4 class="text-3xl ml-3 text-gray-700 font-medium">{{ $producto->name }}</h4>
+
+                      <div class="atributos mt-3">
+                        @foreach($producto->values as $value)
+                          @foreach($atributos as $atributo)
+                            @if($atributo->id == $value->attribute_id)
+                              <h4 class="text-xl ml-3 text-gray-400 font-medium"><span class="text-gray-600">{{ $atributo->name }} :</span> {{ $value->name }}</h4>    
+                            @endif
+                          @endforeach
+                        @endforeach  
+                      </div>
+                      
+                      
                       <div class="valoracion text-amber-300 ml-3 mt-3">
                         <i class="fas fa-star cursor-pointer"></i>
                         <i class="fas fa-star cursor-pointer"></i>

@@ -154,7 +154,7 @@
 				<div class="card-body">
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<Label style='font-size: 30px;' class='mt-3 text-info'>Elige una imagen para el banner de la Descripción <span class="text-danger" style="font-size: 16px;">Tamaño de la imagen (1120px, 450px)</span></Label>
+							<Label style='font-size: 30px;' class='mt-3 text-info'>Subir imagen del Prdocuto <span class="text-danger" style="font-size: 16px;">Tamaño de la imagen (456px, 364px)</span></Label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
@@ -169,7 +169,9 @@
 				</div>
 			</div>
 
-			<div class="card col-12 col-md-12"> {{-- INICIO de Card Subiir foto --}}
+			{{-- INICIO de Card Subiir foto --}}
+			{{-- 
+			<div class="card col-12 col-md-12"> 
 				<div class="card-body">
 					<div class="form-row">
 						<div class="form-group col-md-12">
@@ -187,7 +189,7 @@
 					</div>
 				</div>
 			</div>
-
+			 --}}
 
 					<button type="submit" class="btn btn-primary">Publicar Producto</button>
 			</div>
